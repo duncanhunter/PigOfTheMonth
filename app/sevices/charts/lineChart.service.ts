@@ -15,7 +15,7 @@ export class LineChartDirective implements OnChanges {
     data: any[];
     labels: string[];
     colors: string[];
-    
+
     constructor(private el: ElementRef) {
     }
 
@@ -56,6 +56,12 @@ export class LineChartDirective implements OnChanges {
             data,
             {
                 multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>',
+                responsive: true,
+                scaleOverride : true,
+                scaleSteps: 5,
+                scaleStepWidth: 20,
+                scaleStartValue : 50, 
+                scaleFinishValue : 150 
             }
         );
     }
