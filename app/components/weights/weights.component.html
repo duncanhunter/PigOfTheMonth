@@ -1,0 +1,22 @@
+<div class="col-xs-2 col-xs-offset-5">
+    <img src="assets/images/piggy.png" alt="pig of the month image" width="125px" height="125px">
+</div>
+
+<div>
+    <canvas id="myChart" chart [labels]="months" [colors]="colors" [data]="people"></canvas>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th *ngFor="#month of months">{{month}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="#person of people">
+                <td>{{person.FullName}}</td>
+                <td *ngFor="#weight of person.Weights">{{weight.Kg}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
