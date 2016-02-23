@@ -8,44 +8,67 @@ import { LineChartDirective  } from './../../sevices/charts/lineChart.service';
 @Component({
     selector: 'weights',
     templateUrl: 'app/components/weights/weights.component.html',
-    directives: [LineChartDirective, CORE_DIRECTIVES, FORM_DIRECTIVES]
+    directives: [LineChartDirective, CORE_DIRECTIVES, FORM_DIRECTIVES],
+    styleUrls: ['app/components/weights/weights.css']
 })
 export class WeightsComponent implements OnInit {
     months: string[] = moment.monthsShort();
     date: Date = new Date()
     people: Person[] = [];
-    colors = ['red', 'blue', 'green', 'orange', 'pink'];
+    selectedYear = this.date.getFullYear();
+    colors = ['red', 'blue', 'green', 'orange', 'pink', 'gold', 'purple', 'rose'];
 
-    constructor(private personService: PeopleService) {
-        
+    constructor(private peopleService: PeopleService) {
+
     }
-    
+
     ngOnInit() {
         this.get(this.date)
     }
 
+    changeValue(people) {
+        this.people = [...people];
+    }
+
+    changeYear(amount) {
+        this.date.setFullYear(this.date.getFullYear() + amount);
+        this.selectedYear = this.date.getFullYear();
+        this.get(this.date);
+    }
+
     get(date: Date) {
-        this.personService.get(date)
+        this.peopleService.get(date)
             .subscribe(people => {
                 this.people = people;
             });
     }
 
-
-    save() {
-
+    create() {
+        let person = new Person();
+        this.peopleService.create(person, this.selectedYear)
+            .subscribe((person) => {
+                console.log(`successfully added person`);
+                this.people = [...this.people, person];
+            }
+            );
     }
 
-    delete() {
-
+    put(people: Person[]) {
+        this.peopleService.put(people)
+            .subscribe((people) => {
+                console.log(`successfully updated people`);
+            }
+            );
     }
 
-    update() {
-
-    }
-
-    put() {
-
+    delete(person: Person) {
+        this.peopleService.delete(person)
+            .subscribe((person) => {
+                this.people = _.remove(this.people, (p) => {
+                    return p.Id !== person.Id;
+                });
+                console.log(`successfully deleted person`);
+            });
     }
 
 

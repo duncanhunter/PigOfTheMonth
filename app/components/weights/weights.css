@@ -1,0 +1,12 @@
+table input {
+   width:35px; 
+}
+
+table td {
+    padding: 2px 2px;
+}      
+
+.name {
+    width: 125px !important;
+    padding-left:5px;
+}
