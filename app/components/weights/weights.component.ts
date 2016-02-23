@@ -9,7 +9,7 @@ import { LineChartDirective  } from './../../sevices/charts/lineChart.service';
     selector: 'weights',
     templateUrl: 'app/components/weights/weights.component.html',
     directives: [LineChartDirective, CORE_DIRECTIVES, FORM_DIRECTIVES],
-    styleUrls: ['app/components/weights/weights.css']
+    styleUrls: ['app/components/weights/weights.component.css']
 })
 export class WeightsComponent implements OnInit {
     months: string[] = moment.monthsShort();
