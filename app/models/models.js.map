@@ -1,1 +1,0 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["models.ts"],"names":["Person","Person.constructor","Weight","Weight.constructor"],"mappings":";;;;;YAAA;gBAAAA;gBAIAC,CAACA;gBAADD,aAACA;YAADA,CAACA,AAJD,IAIC;YAJD,2BAIC,CAAA;YAED;gBAAAE;gBAKAC,CAACA;gBAADD,aAACA;YAADA,CAACA,AALD,IAKC;YALD,2BAKC,CAAA"}

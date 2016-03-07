@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PeopleService {
     headers: Headers;
-    api: string = `http://localhost:7324/api`;
+    api: string = `http://pigofthemonthapi.azurewebsites.net/api`;
 
     constructor(public _http: Http) {
         this.makeHeaders();
@@ -19,7 +19,7 @@ export class PeopleService {
     }
 
     get(date: Date): any {
-        return this._http.get(`${this.api}/people/GetPersonsByYear/${date.toISOString()}`)
+        return this._http.get(`${this.api}/people/${date.toISOString()}`)
             .map((response: Response) => response.json());
     }
     

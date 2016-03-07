@@ -60,7 +60,7 @@ export class LineChartDirective implements OnChanges {
                 scaleOverride : true,
                 scaleSteps: 5,
                 scaleStepWidth: 20,
-                scaleStartValue : 50, 
+                scaleStartValue : 55, 
                 scaleFinishValue : 150 
             }
         );
