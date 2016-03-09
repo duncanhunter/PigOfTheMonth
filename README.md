@@ -12,4 +12,7 @@ Launch app in browser
 npm start
 ``` 
 
+How to clone and run the app
+[![Video of how to clone and run](https://www.youtube.com/upload_thumbnail?v=vkCkMz5MCIE&amp;t=hqdefault&amp;ts=1457517154220)](https://youtu.be/vkCkMz5MCIE)
+
 
