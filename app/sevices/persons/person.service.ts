@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PeopleService {
     headers: Headers;
-    api: string = `http://pigofthemonthapi.azurewebsites.net/api`;
+    //api: string = `http://pigofthemonthapi.azurewebsites.net/api`;
+    api: string = `http://localhost:7324/api`;
 
     constructor(public _http: Http) {
         this.makeHeaders();
