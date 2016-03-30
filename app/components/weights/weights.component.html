@@ -14,11 +14,14 @@
         <button class="btn btn-default" (click)="put(people)">Save</button>
     </span>
 </nav>
-
-<div>
-    <canvas id="myChart"  chart [labels]="months" [colors]="colors" [data]="people"></canvas>
-</div>
-
+    
+  <base-chart *ngIf="dataFormatted" class="chart"
+                [data]="lineChart.chartData"
+                [labels]="lineChart.chartLabels"
+                [options]="lineChart.chartOptions"
+                [series]="lineChart.chartSeries"
+                [colours]="lineChart.chartColors"
+                [chartType]="lineChart.chartType"></base-chart>
 
 <div class="table-responsive">
     <table class="table table-striped">

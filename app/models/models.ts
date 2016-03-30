@@ -10,3 +10,12 @@ export class Weight {
     Date: Date;
     PersonId: number;
 }
+
+export class Chart {   
+    chartData: any[];
+    chartLabels: any[];
+    chartSeries: any[];
+    chartColors: any[];
+    chartOptions: Object;
+    chartType: string;
+}
