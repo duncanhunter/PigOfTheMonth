@@ -13,6 +13,6 @@ npm start
 ``` 
 
 How to clone and run the app
-[[Video of how to clone and run the application](https://youtu.be/vkCkMz5MCIE)
+[Video of how to clone and run the application](https://youtu.be/vkCkMz5MCIE)
 
-
+Use ng2-charts branch for Dev Super Powers version
